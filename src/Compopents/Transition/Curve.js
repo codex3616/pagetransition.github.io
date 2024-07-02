@@ -82,6 +82,7 @@ const Curve = (props) => {
           style={{ opacity: dimensions.width == null ? 1 : 0 }}
         />
         <motion.p {...anim(text)} className={styles.routeName}>
+          <div className={styles.indicator}></div>
           {routes[pathname]}
         </motion.p>
         {dimensions.width != null && <SVG {...dimensions} />}
