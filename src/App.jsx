@@ -1,12 +1,24 @@
 import React from "react";
-import SignUp from "./SignUp";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import { Routes, Route, useLocation } from "react-router-dom";
+import Header from "./Compopents/Header/Header";
+import About from "./Compopents/About/About.js";
+import Contact from "./Compopents/Contact/Contact.js";
+import Home from "./Compopents/Home/Home.js";
+import { AnimatePresence } from "framer-motion";
 
 const App = () => {
+  const location = useLocation();
   return (
-    <div>
-      <SignUp />
-    </div>
+    <>
+      <Header />
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route index element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </AnimatePresence>
+    </>
   );
 };
 

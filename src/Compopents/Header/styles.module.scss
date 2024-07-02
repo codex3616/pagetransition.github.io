@@ -1,0 +1,15 @@
+.navbar {
+  width: 80%;
+  padding: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+
+  .link {
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+  }
+}
